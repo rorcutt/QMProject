@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Web
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Otemanu.Tests", "Otemanu.Tests\Otemanu.Tests.csproj", "{1146F649-50A1-4BA0-B650-A15D338F2A7F}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Otemanu.Database", "Otemanu.Database\Otemanu.Database.sqlproj", "{F4380D76-9680-4F67-9335-E13C91B5250E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Otemanu.Web", "Otemanu.Web\Otemanu.Web.csproj", "{336F5F29-39F3-4567-B2D3-5AF54ADC0E31}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1146F649-50A1-4BA0-B650-A15D338F2A7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1146F649-50A1-4BA0-B650-A15D338F2A7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1146F649-50A1-4BA0-B650-A15D338F2A7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1146F649-50A1-4BA0-B650-A15D338F2A7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4380D76-9680-4F67-9335-E13C91B5250E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4380D76-9680-4F67-9335-E13C91B5250E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4380D76-9680-4F67-9335-E13C91B5250E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F4380D76-9680-4F67-9335-E13C91B5250E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4380D76-9680-4F67-9335-E13C91B5250E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4380D76-9680-4F67-9335-E13C91B5250E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{336F5F29-39F3-4567-B2D3-5AF54ADC0E31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{336F5F29-39F3-4567-B2D3-5AF54ADC0E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{336F5F29-39F3-4567-B2D3-5AF54ADC0E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{336F5F29-39F3-4567-B2D3-5AF54ADC0E31}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

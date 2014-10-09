@@ -1,0 +1,98 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Otemanu.master.cs" Inherits="Otemanu.Otemanu" %>
+
+<%@ Register Assembly="OfficeWebUI" Namespace="OfficeWebUI" TagPrefix="OfficeWebUI" %>
+<%@ Register Assembly="OfficeWebUI" Namespace="OfficeWebUI.Ribbon" TagPrefix="Ribbon" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+    <title>Otemanu</title>
+
+    <link rel="stylesheet" type="text/css" href="Styles/Otemanu.css" />
+</head>
+
+<body>
+    <form id="MasterForm" runat="server">
+
+        <OfficeWebUI:Manager runat="server" UITheme="Office2010Blue" IncludeJQuery="true"></OfficeWebUI:Manager>
+
+        <div>
+            <OfficeWebUI:OfficeRibbon Id="NavigationRibbon" runat="server" ApplicationMenuType="None">
+                <Contexts>
+                    <Ribbon:RibbonContext Id="NavigationContext" runat="server">                    
+                        <Tabs>
+                            <Ribbon:RibbonTab Id="MainTab" Text="Main" runat="server">
+                                <Groups>
+                                    <Ribbon:RibbonGroup Id="HomeRibbonGroup" runat="server">
+                                        <Zones>
+                                            <Ribbon:GroupZone Id="HomeGroupZone" runat="server">
+                                                <Content>                      
+                                                    <Ribbon:LargeItem runat="server" ImageUrl="~/Images/Home.png" NavigateUrl="~/Pages/Home.aspx" Text="Home" ToolTip="Home"></Ribbon:LargeItem>
+                                                </Content>
+                                            </Ribbon:GroupZone>
+                                        </Zones>
+                                    </Ribbon:RibbonGroup>
+                                    <Ribbon:RibbonGroup Id="AddOccurenceRibbonGroup" runat="server">
+                                        <Zones>
+                                            <Ribbon:GroupZone Id="AddOccurenceGroupZone" runat="server">
+                                                <Content>                      
+                                                    <Ribbon:LargeItem runat="server" ImageUrl="~/Images/AddOccurence.png" NavigateUrl="~/Pages/AddOccurence.aspx" Text="Add Occurence" ToolTip="Add Occurence"></Ribbon:LargeItem>
+                                                </Content>
+                                            </Ribbon:GroupZone>
+                                        </Zones>
+                                    </Ribbon:RibbonGroup>
+                                    <Ribbon:RibbonGroup Id="BuildRibbonGroup" runat="server">
+                                        <Zones>
+                                            <Ribbon:GroupZone Id="BuildGroupZone" runat="server">
+                                                <Content>                      
+                                                    <Ribbon:LargeItem runat="server" ImageUrl="~/Images/Build.png" NavigateUrl="~/Pages/Build.aspx" Text="Build" ToolTip="Build"></Ribbon:LargeItem>
+                                                </Content>
+                                            </Ribbon:GroupZone>
+                                        </Zones>
+                                    </Ribbon:RibbonGroup>
+                                    <Ribbon:RibbonGroup Id="ReportsRibbonGroup" runat="server">
+                                        <Zones>
+                                            <Ribbon:GroupZone Id="ReportsGroupZone" runat="server">
+                                                <Content>                      
+                                                    <Ribbon:LargeItem runat="server" ImageUrl="~/Images/Reports.png" NavigateUrl="~/Pages/Reports.aspx" Text="Reports" ToolTip="Reports"></Ribbon:LargeItem>
+                                                </Content>
+                                            </Ribbon:GroupZone>
+                                        </Zones>
+                                    </Ribbon:RibbonGroup>
+                                    <Ribbon:RibbonGroup Id="DictionaryRibbonGroup" runat="server">
+                                        <Zones>
+                                            <Ribbon:GroupZone Id="DictionaryGroupZone" runat="server">
+                                                <Content>                      
+                                                    <Ribbon:LargeItem runat="server" ImageUrl="~/Images/Dictionary.png" NavigateUrl="~/Pages/Dictionary.aspx" Text="Dictionary" ToolTip="Dictionary"></Ribbon:LargeItem>
+                                                </Content>
+                                            </Ribbon:GroupZone>
+                                        </Zones>
+                                    </Ribbon:RibbonGroup>
+                                </Groups>
+                            </Ribbon:RibbonTab>
+                            <Ribbon:RibbonTab Id="AdministrationTab" Text="Administration" runat="server">
+                            </Ribbon:RibbonTab>
+                        </Tabs>            
+                    </Ribbon:RibbonContext>
+                </Contexts> 
+            </OfficeWebUI:OfficeRibbon>       
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div>            
+            <hr/>
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Otemanu</p>
+                <a href="Login.aspx">Log out</a>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>

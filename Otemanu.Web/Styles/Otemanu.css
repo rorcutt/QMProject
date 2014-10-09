@@ -1,0 +1,17 @@
+﻿.boarder
+{
+    border: 1px solid #000000;
+}
+
+.centerBlock
+{
+    margin-left:auto;
+    margin-right:auto;
+    width:30%;
+    text-align:center;
+}
+
+.centerLink
+{
+    display:inline-block
+}
