@@ -87,9 +87,13 @@
 
         <div>            
             <hr/>
-            <footer>
+            <footer>                
+                <div>
+                    <asp:Button runat="server" OnClick="SignOut" Text="Log out" /> - <asp:Label ID="UserLabel" runat="server"></asp:Label>                  
+                </div>
+                 
                 <p>&copy; <%: DateTime.Now.Year %> - Otemanu</p>
-                <a href="Login.aspx">Log out</a>
+
             </footer>
         </div>
 

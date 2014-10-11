@@ -1,52 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
+using System;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using System.Configuration;
-using System.Data.SqlClient;
-using System.Web.Security;
 
 namespace Otemanu
 {
     public partial class Login : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {            
         }
 
-        protected void ValidateUser(object sender, EventArgs e)
+        protected void SignIn(object sender, EventArgs e)
         {
-            //int userId = 0;
-            int userId = 1;
+            var userStore = new UserStore<IdentityUser>();
+            var userManager = new UserManager<IdentityUser>(userStore);
+            var user = userManager.Find(UserName.Text, Password.Text);
 
-            string constr = ConfigurationManager.ConnectionStrings["dbConnectionString"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(constr))
+            if (user != null)
             {
-                using (SqlCommand cmd = new SqlCommand("pr_ValidateUser"))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Username", TextBoxUsername.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Password", TextBoxPassword.Text.Trim());
-                    cmd.Connection = con;
+                var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
+                var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
 
-                    con.Open();
-                    userId = Convert.ToInt32(cmd.ExecuteScalar());
-                    con.Close();
-                }                
-
-                if (userId == -1)
-                {
-                    string message = "Username and/or password is incorrect.";
-                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + message + "');", true);
-                }
-                else
-                {
-                    Response.Redirect("~/Pages/Home.aspx");
-                }  
+                authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = false }, userIdentity);
+                Response.Redirect("~/Pages/Home.aspx");
             }
-        }
+            else
+            {
+                StatusText.Text = "Invalid username or password.";
+            }
+        }       
     }
 }

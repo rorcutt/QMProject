@@ -4,38 +4,41 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+
     <title>Register</title>
 
-    <link rel="stylesheet" type="text/css" href="../Styles/Otemanu.css" />
 </head>
 <body>
     <form id="RegisterForm" runat="server">
-    <div class="centerBlock boarder">
-        <table class="centerBlock">
-            <tr>
-                <th colspan="3">Registration</th>
-            </tr>
-            <tr>
-                <td>Username</td>
-                <td><asp:TextBox ID="TextBoxUsername" runat="server" /></td>                
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td><asp:TextBox ID="TextBoxPassword" runat="server" TextMode="Password" /></td>
-            </tr>
-            <tr>
-                <td>Confirm Password</td>
-                <td><asp:TextBox ID="TextBoxConfirmPassword" runat="server" TextMode="Password" /></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><asp:Button Text="Submit" runat="server" OnClick="RegisterUser" /></td>
-                <td></td>
-            </tr>
-        </table>
-
-        <a class="centerLink" href="Login.aspx">Login</a> 
-    </div>
+        <div>
+            <h4>Register a new user</h4>
+            <p>
+                <asp:Literal runat="server" ID="StatusMessage" />
+            </p>                
+            <div>
+                <asp:Label runat="server" AssociatedControlID="UserName">User name</asp:Label>
+                <div>
+                    <asp:TextBox runat="server" ID="UserName" />                
+                </div>
+            </div>
+            <div>
+                <asp:Label runat="server" AssociatedControlID="Password">Password</asp:Label>
+                <div>
+                    <asp:TextBox runat="server" ID="Password" TextMode="Password" />                
+                </div>
+            </div>
+            <div>
+                <asp:Label runat="server" AssociatedControlID="ConfirmPassword">Confirm password</asp:Label>
+                <div>
+                    <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" />                
+                </div>
+            </div>
+            <div>
+                <div>
+                    <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" />
+                </div>
+            </div>
+        </div>
     </form>
 </body>
 </html>

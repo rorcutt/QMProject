@@ -10,8 +10,14 @@ namespace Otemanu
     public partial class Otemanu : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {                       
+        }
 
+        protected void SignOut(object sender, EventArgs e)
+        {
+            var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
+            authenticationManager.SignOut();
+            Response.Redirect("~/Pages/Login.aspx");
         }
     }
 }

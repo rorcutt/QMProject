@@ -22,30 +22,39 @@ namespace Otemanu {
         protected global::System.Web.UI.HtmlControls.HtmlForm RegisterForm;
         
         /// <summary>
-        /// TextBoxUsername control.
+        /// StatusMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxUsername;
+        protected global::System.Web.UI.WebControls.Literal StatusMessage;
         
         /// <summary>
-        /// TextBoxPassword control.
+        /// UserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPassword;
+        protected global::System.Web.UI.WebControls.TextBox UserName;
         
         /// <summary>
-        /// TextBoxConfirmPassword control.
+        /// Password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxConfirmPassword;
+        protected global::System.Web.UI.WebControls.TextBox Password;
+        
+        /// <summary>
+        /// ConfirmPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ConfirmPassword;
     }
 }

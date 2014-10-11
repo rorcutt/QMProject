@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
+using System;
 using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data;
-using System.Configuration;
-using System.Data.SqlClient;
 
 namespace Otemanu
 {
@@ -16,39 +13,32 @@ namespace Otemanu
         {
         }
 
-        protected void RegisterUser(object sender, EventArgs e)
+        protected void CreateUser_Click(object sender, EventArgs e)
         {
-            int userId = 0;
+            // Default UserStore constructor uses the default connection string named DefaultConnection
+            var userStore = new UserStore<IdentityUser>();
+            var manager = new UserManager<IdentityUser>(userStore);
 
-            string constr = ConfigurationManager.ConnectionStrings["dbConnectionString"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(constr))
+            //Create a new user
+            var user = new IdentityUser()
             {
-                using (SqlCommand cmd = new SqlCommand("pr_InsertUser"))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter())
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@Username", TextBoxUsername.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Password", TextBoxPassword.Text.Trim());
-                        cmd.Connection = con;
+                UserName = UserName.Text
+            };
 
-                        con.Open();
-                        userId = Convert.ToInt32(cmd.ExecuteScalar());
-                        con.Close();
-                    }
-                }
-                string message = string.Empty;
-                switch (userId)
-                {
-                    case -1:
-                        message = "Username already exists.\\nPlease choose a different username.";
-                        break;
-                    default:
-                        message = "Registration successful.\\nUser Id: " + userId.ToString();
-                        break;
-                }
+            //Save the user to the database
+            IdentityResult result = manager.Create(user, Password.Text);
 
-                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + message + "');", true);
+            //Return the result information to the page
+            if (result.Succeeded)
+            {
+                var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
+                var userIdentity = manager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+                authenticationManager.SignIn(new AuthenticationProperties() { }, userIdentity);
+                Response.Redirect("~/Pages/Login.aspx");
+            }
+            else
+            {
+                StatusMessage.Text = result.Errors.FirstOrDefault();
             }
         }
     }
