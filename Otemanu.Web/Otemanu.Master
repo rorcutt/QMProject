@@ -70,6 +70,15 @@
                                             </Ribbon:GroupZone>
                                         </Zones>
                                     </Ribbon:RibbonGroup>
+                                    <Ribbon:RibbonGroup Id="UserAuditRibbonGroup" runat="server">
+                                        <Zones>
+                                            <Ribbon:GroupZone Id="UserAuditGroupZone" runat="server">
+                                                <Content>                      
+                                                    <Ribbon:LargeItem runat="server" ImageUrl="~/Images/Dictionary.png" NavigateUrl="~/Pages/UserAudit.aspx" Text="User Audit" ToolTip="User Audit"></Ribbon:LargeItem>
+                                                </Content>
+                                            </Ribbon:GroupZone>
+                                        </Zones>
+                                    </Ribbon:RibbonGroup>
                                 </Groups>
                             </Ribbon:RibbonTab>
                             <Ribbon:RibbonTab Id="AdministrationTab" Text="Administration" runat="server">

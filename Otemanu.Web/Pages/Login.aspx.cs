@@ -9,6 +9,17 @@ namespace Otemanu
 {
     public partial class Login : System.Web.UI.Page
     {
+        private static string username = "";
+
+        public static string GetUserName()
+        {
+            return username;
+        }
+
+        private void SetUserName(string user)
+        {
+            username = user;
+        }
         protected void Page_Load(object sender, EventArgs e)
         {            
         }

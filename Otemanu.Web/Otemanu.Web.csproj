@@ -16,9 +16,9 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Pages\Reports.aspx" />
+    <Content Include="Pages\UserAudit.aspx" />
     <Content Include="Styles\Otemanu.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -164,6 +165,13 @@
     </Compile>
     <Compile Include="Otemanu.Master.designer.cs">
       <DependentUpon>Otemanu.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserAudit.aspx.cs">
+      <DependentUpon>UserAudit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UserAudit.aspx.designer.cs">
+      <DependentUpon>UserAudit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pages\Reports.aspx.cs">
