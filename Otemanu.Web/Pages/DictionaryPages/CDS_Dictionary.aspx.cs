@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Otemanu
 {
-    public partial class Dictionary : System.Web.UI.Page
+    public partial class CDS_Dictionary : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

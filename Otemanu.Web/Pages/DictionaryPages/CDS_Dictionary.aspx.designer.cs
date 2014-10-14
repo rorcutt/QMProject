@@ -10,24 +10,15 @@
 namespace Otemanu {
     
     
-    public partial class Dictionary {
+    public partial class CDS_Dictionary {
         
         /// <summary>
-        /// QueryDict control.
+        /// CDS_Dict control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton QueryDict;
-        
-        /// <summary>
-        /// CDS_Dictionary control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton CDS_Dictionary;
+        protected global::System.Web.UI.WebControls.LinkButton CDS_Dict;
     }
 }

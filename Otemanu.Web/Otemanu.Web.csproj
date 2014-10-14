@@ -90,6 +90,8 @@
     <Content Include="Pages\AddOccurence.aspx" />
     <Content Include="Pages\Build.aspx" />
     <Content Include="Pages\Dictionary.aspx" />
+    <Content Include="Pages\DictionaryPages\CDS_Dictionary.aspx" />
+    <Content Include="Pages\DictionaryPages\Query_Dictionary.aspx" />
     <Content Include="Pages\Home.aspx" />
     <Content Include="Images\AddOccurence.png" />
     <Content Include="Images\Home.png" />
@@ -137,6 +139,20 @@
     </Compile>
     <Compile Include="Pages\Dictionary.aspx.designer.cs">
       <DependentUpon>Dictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DictionaryPages\CDS_Dictionary.aspx.cs">
+      <DependentUpon>CDS_Dictionary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\DictionaryPages\CDS_Dictionary.aspx.designer.cs">
+      <DependentUpon>CDS_Dictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DictionaryPages\Query_Dictionary.aspx.cs">
+      <DependentUpon>Query_Dictionary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\DictionaryPages\Query_Dictionary.aspx.designer.cs">
+      <DependentUpon>Query_Dictionary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
