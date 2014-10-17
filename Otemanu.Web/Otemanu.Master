@@ -29,7 +29,7 @@
                                         <Zones>
                                             <Ribbon:GroupZone Id="HomeGroupZone" runat="server">
                                                 <Content>                      
-                                                    <Ribbon:LargeItem runat="server" ImageUrl="~/Images/Home.png" NavigateUrl="~/Pages/Home.aspx" Text="Home" ToolTip="Home"></Ribbon:LargeItem>
+                                                    <Ribbon:LargeItem Id="HomeRibbonItem" runat="server" ImageUrl="~/Images/Home.png" Text="Home" ToolTip="Home"></Ribbon:LargeItem>
                                                 </Content>
                                             </Ribbon:GroupZone>
                                         </Zones>
@@ -38,7 +38,7 @@
                                         <Zones>
                                             <Ribbon:GroupZone Id="AddOccurenceGroupZone" runat="server">
                                                 <Content>                      
-                                                    <Ribbon:LargeItem runat="server" ImageUrl="~/Images/AddOccurence.png" NavigateUrl="~/Pages/AddOccurence.aspx" Text="Add Occurence" ToolTip="Add Occurence"></Ribbon:LargeItem>
+                                                    <Ribbon:LargeItem Id="AddOccurenceRibbonItem" runat="server" ImageUrl="~/Images/AddOccurence.png" Text="Add Occurence" ToolTip="Add Occurence"></Ribbon:LargeItem>
                                                 </Content>
                                             </Ribbon:GroupZone>
                                         </Zones>
@@ -47,7 +47,7 @@
                                         <Zones>
                                             <Ribbon:GroupZone Id="BuildGroupZone" runat="server">
                                                 <Content>                      
-                                                    <Ribbon:LargeItem runat="server" ImageUrl="~/Images/Build.png" NavigateUrl="~/Pages/Build.aspx" Text="Build" ToolTip="Build"></Ribbon:LargeItem>
+                                                    <Ribbon:LargeItem Id="BuildRibbonItem" runat="server" ImageUrl="~/Images/Build.png" Text="Build" ToolTip="Build"></Ribbon:LargeItem>
                                                 </Content>
                                             </Ribbon:GroupZone>
                                         </Zones>
@@ -56,7 +56,7 @@
                                         <Zones>
                                             <Ribbon:GroupZone Id="ReportsGroupZone" runat="server">
                                                 <Content>                      
-                                                    <Ribbon:LargeItem runat="server" ImageUrl="~/Images/Reports.png" NavigateUrl="~/Pages/Reports.aspx" Text="Reports" ToolTip="Reports"></Ribbon:LargeItem>
+                                                    <Ribbon:LargeItem Id="ReportsRibbonItem" runat="server" ImageUrl="~/Images/Reports.png" Text="Reports" ToolTip="Reports"></Ribbon:LargeItem>
                                                 </Content>
                                             </Ribbon:GroupZone>
                                         </Zones>
@@ -65,7 +65,7 @@
                                         <Zones>
                                             <Ribbon:GroupZone Id="DictionaryGroupZone" runat="server">
                                                 <Content>                      
-                                                    <Ribbon:LargeItem runat="server" ImageUrl="~/Images/Dictionary.png" NavigateUrl="~/Pages/Dictionary.aspx" Text="Dictionary" ToolTip="Dictionary"></Ribbon:LargeItem>
+                                                    <Ribbon:LargeItem Id="DictionaryRibbonItem" runat="server" ImageUrl="~/Images/Dictionary.png" Text="Dictionary" ToolTip="Dictionary"></Ribbon:LargeItem>
                                                 </Content>
                                             </Ribbon:GroupZone>
                                         </Zones>

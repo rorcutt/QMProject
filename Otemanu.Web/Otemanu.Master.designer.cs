@@ -67,6 +67,15 @@ namespace Otemanu {
         protected global::OfficeWebUI.Ribbon.GroupZone HomeGroupZone;
         
         /// <summary>
+        /// HomeRibbonItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::OfficeWebUI.Ribbon.LargeItem HomeRibbonItem;
+        
+        /// <summary>
         /// AddOccurenceRibbonGroup control.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,15 @@ namespace Otemanu {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::OfficeWebUI.Ribbon.GroupZone AddOccurenceGroupZone;
+        
+        /// <summary>
+        /// AddOccurenceRibbonItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::OfficeWebUI.Ribbon.LargeItem AddOccurenceRibbonItem;
         
         /// <summary>
         /// BuildRibbonGroup control.
@@ -103,6 +121,15 @@ namespace Otemanu {
         protected global::OfficeWebUI.Ribbon.GroupZone BuildGroupZone;
         
         /// <summary>
+        /// BuildRibbonItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::OfficeWebUI.Ribbon.LargeItem BuildRibbonItem;
+        
+        /// <summary>
         /// ReportsRibbonGroup control.
         /// </summary>
         /// <remarks>
@@ -121,6 +148,15 @@ namespace Otemanu {
         protected global::OfficeWebUI.Ribbon.GroupZone ReportsGroupZone;
         
         /// <summary>
+        /// ReportsRibbonItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::OfficeWebUI.Ribbon.LargeItem ReportsRibbonItem;
+        
+        /// <summary>
         /// DictionaryRibbonGroup control.
         /// </summary>
         /// <remarks>
@@ -137,6 +173,15 @@ namespace Otemanu {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::OfficeWebUI.Ribbon.GroupZone DictionaryGroupZone;
+        
+        /// <summary>
+        /// DictionaryRibbonItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::OfficeWebUI.Ribbon.LargeItem DictionaryRibbonItem;
         
         /// <summary>
         /// AdministrationTab control.
