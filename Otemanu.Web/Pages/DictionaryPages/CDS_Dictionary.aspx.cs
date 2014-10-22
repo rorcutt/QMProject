@@ -9,6 +9,7 @@ namespace Otemanu
 {
     public partial class CDS_Dictionary : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!User.Identity.IsAuthenticated)
@@ -72,15 +73,28 @@ namespace Otemanu
                 rowNumberText.ID = "row_number" + count.ToString();
 
                 //Generate QueryID Dropdown
-                // Get QueryIDs in one call, store in list (element 0 - mnemonic, element 1 - name, element, type)
+                DropDownList querySelectBox = new DropDownList();
+                querySelectBox.Text = "Query";
+                string[] queries = getQueries();
+                foreach (string query in queries)
+                {
+                    querySelectBox.Items.Add(query);
+                }
 
                 //Add Elements to Screen
                 Panel1.Controls.Add(new LiteralControl("<BR>"));
                 Panel1.Controls.Add(rowNumberLabel);
                 Panel1.Controls.Add(rowNumberText);
+                Panel1.Controls.Add(querySelectBox);
                 
             }
 
+        }
+        private string[] getQueries()
+        {
+            string[] queries = {"TEST1","TEST2"};
+
+            return queries;
         }
     }
 }

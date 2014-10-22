@@ -147,6 +147,7 @@
     <Compile Include="Pages\DictionaryPages\CDS_Dictionary.aspx.designer.cs">
       <DependentUpon>CDS_Dictionary.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DictionaryPages\CDS_Object.cs" />
     <Compile Include="Pages\DictionaryPages\Query_Dictionary.aspx.cs">
       <DependentUpon>Query_Dictionary.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
