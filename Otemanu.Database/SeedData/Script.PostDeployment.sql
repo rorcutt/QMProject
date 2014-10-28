@@ -10,4 +10,4 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
-:r .\Insert_QuertType.sql
+:r .\Insert_QueryType.sql

@@ -73,7 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Otemanu.Database.publish.xml" />
-    <None Include="SeedData\Insert_QueryData.sql" />
+    <None Include="SeedData\Insert_QueryType.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="SeedData\Script.PostDeployment.sql" />
