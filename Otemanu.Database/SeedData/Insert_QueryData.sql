@@ -1,0 +1,3 @@
+﻿INSERT INTO QueryType
+SELECT 'Label' UNION
+SELECT 'TextBox'

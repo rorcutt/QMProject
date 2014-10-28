@@ -23,7 +23,7 @@
                 <Contexts>
                     <Ribbon:RibbonContext Id="NavigationContext" runat="server">                    
                         <Tabs>
-                            <Ribbon:RibbonTab Id="MainTab" Text="Main" runat="server">
+                            <Ribbon:RibbonTab Id="TestTab" Text="Test" runat="server">
                                 <Groups>
                                     <Ribbon:RibbonGroup Id="HomeRibbonGroup" runat="server">
                                         <Zones>
@@ -72,7 +72,7 @@
                                     </Ribbon:RibbonGroup>
                                 </Groups>
                             </Ribbon:RibbonTab>
-                            <Ribbon:RibbonTab Id="AdministrationTab" Text="Administration" runat="server">
+                            <Ribbon:RibbonTab Id="LiveTab" Text="Live" runat="server">
                             </Ribbon:RibbonTab>
                         </Tabs>            
                     </Ribbon:RibbonContext>

@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Otemanu.Web", "Otemanu.Web\Otemanu.Web.csproj", "{336F5F29-39F3-4567-B2D3-5AF54ADC0E31}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Otemanu.Database", "Otemanu.Database\Otemanu.Database.sqlproj", "{5C7AD8B8-678E-4972-B07B-016F6DAF7FB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,12 @@ Global
 		{336F5F29-39F3-4567-B2D3-5AF54ADC0E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{336F5F29-39F3-4567-B2D3-5AF54ADC0E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{336F5F29-39F3-4567-B2D3-5AF54ADC0E31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C7AD8B8-678E-4972-B07B-016F6DAF7FB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C7AD8B8-678E-4972-B07B-016F6DAF7FB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C7AD8B8-678E-4972-B07B-016F6DAF7FB3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5C7AD8B8-678E-4972-B07B-016F6DAF7FB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C7AD8B8-678E-4972-B07B-016F6DAF7FB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C7AD8B8-678E-4972-B07B-016F6DAF7FB3}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

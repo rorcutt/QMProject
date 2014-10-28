@@ -40,13 +40,13 @@ namespace Otemanu {
         protected global::OfficeWebUI.Ribbon.RibbonContext NavigationContext;
         
         /// <summary>
-        /// MainTab control.
+        /// TestTab control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::OfficeWebUI.Ribbon.RibbonTab MainTab;
+        protected global::OfficeWebUI.Ribbon.RibbonTab TestTab;
         
         /// <summary>
         /// HomeRibbonGroup control.
@@ -184,13 +184,13 @@ namespace Otemanu {
         protected global::OfficeWebUI.Ribbon.LargeItem DictionaryRibbonItem;
         
         /// <summary>
-        /// AdministrationTab control.
+        /// LiveTab control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::OfficeWebUI.Ribbon.RibbonTab AdministrationTab;
+        protected global::OfficeWebUI.Ribbon.RibbonTab LiveTab;
         
         /// <summary>
         /// MainContent control.
