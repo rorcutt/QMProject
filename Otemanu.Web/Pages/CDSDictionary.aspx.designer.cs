@@ -10,7 +10,34 @@
 namespace Otemanu {
     
     
-    public partial class Dictionary {
+    public partial class CDSDictionary {
+        
+        /// <summary>
+        /// QueriesByCDSDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource QueriesByCDSDataSource;
+        
+        /// <summary>
+        /// AllCDSDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource AllCDSDataSource;
+        
+        /// <summary>
+        /// AllQueriesDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource AllQueriesDataSource;
         
         /// <summary>
         /// CDSDefinitionDataSource control.
@@ -20,24 +47,6 @@ namespace Otemanu {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource CDSDefinitionDataSource;
-        
-        /// <summary>
-        /// CDSDropDownListDataSource control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource CDSDropDownListDataSource;
-        
-        /// <summary>
-        /// QueryDataSource control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource QueryDataSource;
         
         /// <summary>
         /// CDSDropDownListLabel control.
@@ -58,13 +67,40 @@ namespace Otemanu {
         protected global::System.Web.UI.WebControls.DropDownList CDSDropDownList;
         
         /// <summary>
-        /// QueryDataList control.
+        /// CreateCDSButtonTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList QueryDataList;
+        protected global::System.Web.UI.WebControls.TextBox CreateCDSButtonTextBox;
+        
+        /// <summary>
+        /// CreateCDSButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CreateCDSButton;
+        
+        /// <summary>
+        /// CreateCDSResultLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CreateCDSResultLabel;
+        
+        /// <summary>
+        /// QueryCheckBoxList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList QueryCheckBoxList;
         
         /// <summary>
         /// PreviewCDS control.

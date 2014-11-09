@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[pr_GetQuerysFromCDS]
+﻿CREATE PROCEDURE [dbo].[pr_GetQueriesFromCDS]
 (
 	@CustomDefinedScreen INT
 )

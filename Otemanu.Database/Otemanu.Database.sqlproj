@@ -23,6 +23,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <GenerateCreateScript>False</GenerateCreateScript>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -69,7 +70,13 @@
     <Build Include="Tables\CustomDefinedScreen_Query_Mapping.sql" />
     <Build Include="Stored Procedures\pr_GetCDSDefinition.sql" />
     <Build Include="Stored Procedures\pr_GetAllCDS.sql" />
-    <Build Include="Stored Procedures\pr_GetQuerysFromCDS.sql" />
+    <Build Include="Stored Procedures\pr_GetQueriesFromCDS.sql" />
+    <Build Include="Stored Procedures\pr_SaveCDS.sql" />
+    <Build Include="Stored Procedures\pr_GetAllQueries.sql" />
+    <Build Include="Tables\StandardDictionaryType.sql" />
+    <None Include="SeedData\Insert_StandardDictionaryType.sql" />
+    <Build Include="Tables\Location.sql" />
+    <Build Include="Stored Procedures\pr_GetStandardDictionaryItems.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Otemanu.Database.publish.xml" />

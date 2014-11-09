@@ -1,3 +1,6 @@
 ﻿INSERT INTO QueryType
 SELECT 'Label' UNION
-SELECT 'TextBox'
+SELECT 'TextBox' UNION
+SELECT 'StandardDictionary' UNION
+SELECT 'CustomDictionary'
+GO

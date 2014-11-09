@@ -75,7 +75,7 @@ namespace Otemanu
             else if (temp.ID.Equals("DictionaryRibbonItem"))
             {
                 Cache.Insert("SelectedRibbonItem", "DictionaryRibbonItem");
-                redirectUrl = "~/Pages/Dictionary.aspx";
+                redirectUrl = "~/Pages/Dictionaries.aspx";
             }
 
             Response.Redirect(redirectUrl);
