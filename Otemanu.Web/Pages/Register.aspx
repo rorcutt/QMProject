@@ -11,6 +11,7 @@
 <body>
     <form id="RegisterForm" runat="server">
         <div>
+            <h2>Register</h2>
             <h4>Register a new user</h4>
             <p>
                 <asp:Literal runat="server" ID="StatusMessage" />

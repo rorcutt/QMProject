@@ -67,33 +67,6 @@ namespace Otemanu {
         protected global::System.Web.UI.WebControls.DropDownList CDSDropDownList;
         
         /// <summary>
-        /// CreateCDSButtonTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CreateCDSButtonTextBox;
-        
-        /// <summary>
-        /// CreateCDSButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CreateCDSButton;
-        
-        /// <summary>
-        /// CreateCDSResultLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CreateCDSResultLabel;
-        
-        /// <summary>
         /// QueryCheckBoxList control.
         /// </summary>
         /// <remarks>
@@ -101,6 +74,15 @@ namespace Otemanu {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBoxList QueryCheckBoxList;
+        
+        /// <summary>
+        /// SaveCDSChangesButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SaveCDSChangesButton;
         
         /// <summary>
         /// PreviewCDS control.

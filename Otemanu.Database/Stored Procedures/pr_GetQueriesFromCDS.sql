@@ -6,6 +6,7 @@ AS
 BEGIN
 
 	SELECT DISTINCT
+		query.Id,
 		query.Name
 	FROM Query query
 	JOIN CustomDefinedScreen_Query_Mapping map ON map.Query = query.Id

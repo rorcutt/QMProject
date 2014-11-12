@@ -11,7 +11,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <h4>Log In</h4>
+            <h2>Login</h2>
 
             <p>
                 <asp:Literal runat="server" ID="StatusText" />

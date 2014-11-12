@@ -24,6 +24,15 @@ namespace Otemanu
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("~/Pages/Login.aspx");
+            }
+            else
+            {
+                UserLabel.Text = HttpContext.Current.User.Identity.Name; 
+            }
+
             selectedRibbonItemId = (string)Cache.Get("SelectedRibbonItem");
 
             if (selectedRibbonItemId == null)

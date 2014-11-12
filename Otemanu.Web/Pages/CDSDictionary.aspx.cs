@@ -6,27 +6,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using AjaxControlToolkit;
 
 namespace Otemanu
 {
     public partial class CDSDictionary : System.Web.UI.Page
     {
+        private string ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!User.Identity.IsAuthenticated)
-            {
-                Response.Redirect("~/Pages/Login.aspx");
-            }
-            else
-            {
-                Label userLabel = (Label)Master.FindControl("UserLabel");
-                if (userLabel != null)
-                {
-                    userLabel.Text = User.Identity.Name;
-                }
-            }
-
+            ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             if (!Page.IsPostBack)
             {
                 CDSDropDownList.DataSource = AllCDSDataSource;
@@ -55,42 +44,42 @@ namespace Otemanu
                 formattingTable.Controls.Add(formattingRow);
                 TableCell formattingCellColumn1 = new TableCell { Width = 225 };                
                 TableCell formattingCellColumn2 = new TableCell { Width = 225 };
+                TableCell formattingCellColumn3 = new TableCell { Width = 225 };
                 formattingRow.Controls.Add(formattingCellColumn1);
                 formattingRow.Controls.Add(formattingCellColumn2);
+                formattingRow.Controls.Add(formattingCellColumn3);
 
                 Label labelToAdd = new Label();
                 labelToAdd.Font.Bold = true;
 
-                if (rowValue.Equals("Label", StringComparison.OrdinalIgnoreCase))
-                {                    
-                    labelToAdd.Text = (string)row.ItemArray[0];
-                    labelToAdd.Enabled = false;
+                Label typeLabel = new Label();
+                typeLabel.Text = rowValue;
+                formattingCellColumn3.Controls.Add(typeLabel); 
 
-                    formattingCellColumn1.Controls.Add(labelToAdd); 
+                if (rowValue.Equals("Label", StringComparison.OrdinalIgnoreCase))
+                {
+                    labelToAdd.Text = (string)row.ItemArray[0];
+
+                    formattingCellColumn1.Controls.Add(labelToAdd);                    
                 }
                 else if (rowValue.Equals("TextBox", StringComparison.OrdinalIgnoreCase))
                 {
                     labelToAdd.Text = string.Format("{0} ",(string)row.ItemArray[0]);
                     TextBox textBoxToAdd = new TextBox();
 
-                    labelToAdd.Enabled = false;
-                    textBoxToAdd.Enabled = false;
-
                     formattingCellColumn1.Controls.Add(labelToAdd);
                     formattingCellColumn2.Controls.Add(textBoxToAdd);
                 }
                 else if (rowValue.Equals("StandardDictionary", StringComparison.OrdinalIgnoreCase))
-                {
+                {                    
                     labelToAdd.Text = string.Format("{0} ", (string)row.ItemArray[0]);
 
-                    ComboBox itemDropDown = new ComboBox();
-                    itemDropDown.AutoCompleteMode = ComboBoxAutoCompleteMode.Suggest;
-                    itemDropDown.DropDownStyle = ComboBoxStyle.DropDown;
+                    DropDownList itemDropDown = new DropDownList();                    
 
                     string tableName = (string)row.ItemArray[2];
+                    typeLabel.Text = string.Format("{0}: {1}",typeLabel.Text, tableName);
 
-                    string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    using (SqlConnection conn = new SqlConnection(ConnectionString))
                     {
                         SqlCommand comm = new SqlCommand("pr_GetStandardDictionaryItems", conn);
 
@@ -103,57 +92,20 @@ namespace Otemanu
                         while (returnItems.Read())
                         {
                             string name = returnItems["Name"].ToString();
-                            itemDropDown.Items.Add(new ListItem(name, name));
+                            itemDropDown.Items.Add(new ListItem(name, name));                         
                         }                        
 
                         conn.Close();
                     }
 
-                    labelToAdd.Enabled = false;
-                    itemDropDown.Enabled = true;
-
                     formattingCellColumn1.Controls.Add(labelToAdd);
                     formattingCellColumn2.Controls.Add(itemDropDown);
                 }
+                typeLabel.Text = string.Format("[{0}]",typeLabel.Text);
             }
 
             DynamicCDSContent.Controls.Add(formattingTable);            
-        }
-
-        protected void CreateCDSButton_Click(object sender, EventArgs e)
-        {
-            string newCDSName = CreateCDSButtonTextBox.Text;
-            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                SqlCommand comm = new SqlCommand("pr_SaveCDS", conn);
-
-                comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.AddWithValue("@Name", newCDSName);
-                comm.Parameters.AddWithValue("@Description", string.Empty);
-
-                conn.Open();
-
-                int returnValue = (int)comm.ExecuteScalar();
-
-                if (returnValue == 1)
-                {
-                    CreateCDSResultLabel.Text = "New CDS Create!";
-                    CreateCDSResultLabel.Visible = true;
-                }
-
-                if (returnValue == 2)
-                {
-                    CreateCDSResultLabel.Text = "Existing CDS Updated!";
-                    CreateCDSResultLabel.Visible = true;
-                }
-
-                conn.Close();
-            }
-
-            Response.Redirect("~/Pages/Dictionary.aspx");
-        }
+        }        
 
         protected void CDSDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -166,20 +118,44 @@ namespace Otemanu
                     item.Selected = false;
                     foreach (DataRow row in dv.Table.Rows)
                     {
-                        string value = (string)row["Name"];
-                        if (item.Value.Equals(row["Name"]))
-                        {
-                            item.Selected = true;
-                            continue;
-                        }
+                        string value = Convert.ToString((int)row["Id"]);
+                        if (item.Value.Equals(value, StringComparison.OrdinalIgnoreCase))                       
+                            item.Selected = true;                        
                     }
                 }  
             }
             catch(Exception)
             {
+            }                          
+        }
 
+        protected void SaveCDSChangesButton_Click(object sender, EventArgs e)
+        {
+            foreach (ListItem item in QueryCheckBoxList.Items)
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    SqlCommand comm;
+                    if (item.Selected)
+                    {
+                        comm = new SqlCommand("pr_InsertCDSQueryMapping", conn);
+                    }
+                    else
+                    {
+                        comm = new SqlCommand("pr_DeleteCDSQueryMapping", conn);
+                    }
+
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.Parameters.AddWithValue("@customDefinedScreenId", CDSDropDownList.SelectedValue);
+                    comm.Parameters.AddWithValue("@queryId", item.Value);
+
+                    conn.Open();
+
+                    comm.ExecuteNonQuery();                   
+
+                    conn.Close();
+                }
             }
-                          
         }
     }
 }
