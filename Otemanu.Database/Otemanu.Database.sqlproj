@@ -79,6 +79,7 @@
     <Build Include="Stored Procedures\pr_GetStandardDictionaryItems.sql" />
     <Build Include="Stored Procedures\pr_InsertCDSQueryMapping.sql" />
     <Build Include="Stored Procedures\pr_DeleteCDSQueryMapping.sql" />
+    <Build Include="Stored Procedures\pr_DeleteCDS.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Otemanu.Database.publish.xml" />

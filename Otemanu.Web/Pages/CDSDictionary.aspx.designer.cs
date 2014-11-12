@@ -67,6 +67,15 @@ namespace Otemanu {
         protected global::System.Web.UI.WebControls.DropDownList CDSDropDownList;
         
         /// <summary>
+        /// DeleteCDSButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DeleteCDSButton;
+        
+        /// <summary>
         /// QueryCheckBoxList control.
         /// </summary>
         /// <remarks>

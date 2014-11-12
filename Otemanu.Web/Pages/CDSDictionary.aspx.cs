@@ -157,5 +157,24 @@ namespace Otemanu
                 }
             }
         }
+
+        protected void DeleteCDSButton_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                SqlCommand comm = new SqlCommand("pr_DeleteCDS", conn);
+
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.AddWithValue("@customDefinedScreenId", CDSDropDownList.SelectedValue);                
+
+                conn.Open();
+
+                comm.ExecuteNonQuery();
+
+                conn.Close();
+            }
+
+            Response.Redirect("~/Pages/CDSDictionary.aspx");
+        }
     }
 }

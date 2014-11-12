@@ -21,7 +21,8 @@
             <asp:TableCell HorizontalAlign="Left" VerticalAlign="Top" BorderStyle="Solid" BorderWidth="1.5">
                 <asp:Label ID="CDSDropDownListLabel" runat="server" Text="Choose a CDS" Font-Bold="True"></asp:Label><br/>
                 <asp:DropDownList ID="CDSDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="CDSDropDownList_SelectedIndexChanged"></asp:DropDownList><br/><br/>
-                <asp:HyperLink runat="server" NavigateUrl="~/Pages/CreateNewCDS.aspx">Create New CDS</asp:HyperLink>
+                <div><asp:HyperLink runat="server" NavigateUrl="~/Pages/CreateNewCDS.aspx">Create New CDS</asp:HyperLink></div><br />
+                <div><asp:Button ID="DeleteCDSButton" runat="server" Text="Delete CDS" OnClick="DeleteCDSButton_Click"/></div>
             </asp:TableCell>
             <asp:TableCell HorizontalAlign="Left" VerticalAlign="Top" BorderStyle="Solid" BorderWidth="1.5">
                 <asp:Label runat="server" Text="Included Queries" Font-Bold="True"></asp:Label>        
