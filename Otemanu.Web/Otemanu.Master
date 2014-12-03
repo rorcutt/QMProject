@@ -14,6 +14,9 @@
 </head>
 
 <body>
+
+    <asp:Image ID="OtemanuLogoImage" runat="server" ImageUrl="Images/Otemanu_Logo_Smaller.png"/>
+
     <form id="MasterForm" runat="server">
 
         <OfficeWebUI:Manager runat="server" UITheme="Office2010Blue" IncludeJQuery="true"></OfficeWebUI:Manager>
@@ -92,7 +95,7 @@
                     <asp:Button runat="server" OnClick="SignOut" Text="Log out" /> - <asp:Label ID="UserLabel" runat="server"></asp:Label>                  
                 </div>
                  
-                <p>&copy; <%: DateTime.Now.Year %> - Otemanu</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Otemanu</p>                
 
             </footer>
         </div>

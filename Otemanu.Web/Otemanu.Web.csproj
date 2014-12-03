@@ -88,6 +88,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\Otemanu_Logo_Small.png" />
+    <Content Include="Images\Otemanu_Logo_Smaller.png" />
     <Content Include="Pages\AddOccurence.aspx" />
     <Content Include="Pages\Build.aspx" />
     <Content Include="Pages\CDSDictionary.aspx" />
